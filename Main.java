@@ -19,13 +19,22 @@ public class Main
         }
         System.out.println();
         System.out.println();
+
+         // Task 2: Write Number in Expanded Form
+        
+        System.out.println("Task 2: Write Number in Expanded Form");
+        System.out.println("Введите натуральное число n");
+        int x = sc.nextInt();
+        System.out.println("Число n в развернутой форме:");
+        System.out.println(ExpandedForm.expandedForm(x));
+        System.out.println();
         
     }
     
     // Task 1: Cat years, Dog years
     
-   public static class Dinglemouse 
-   {
+    public static class Dinglemouse 
+    {
       public static int[] humanYearsCatYearsDogYears(final int humanYears) 
       {
         int cat = 0;
@@ -75,6 +84,38 @@ public class Main
         }
         return new int[] {humanYears, cat, dog};
       }
+    }
+    
+    // Task 2: Write Number in Expanded Form
+    
+    public static class ExpandedForm
+    {
+        public static String expandedForm(int num)
+        {
+            int x = 0;
+            String s = "";
+            int n = num;
+            int k = 0;
+            while(n > 0)
+            {
+                k += 1;
+                n = n/10;
+            }
+            k = k-1;
+            n = num;
+            while(n > 0)
+            {
+                x = (int) Math.pow(10, k);
+                if (n/x > 0)
+                {
+                    if (n < num) s += " + ";
+                    s += (n/x)*x;
+                }
+                n = n%x;
+                k -= 1;
+            }
+            return s;
+        }
     }
     
 }
