@@ -37,4 +37,34 @@ Dog Years
       }
       
 
+## Task 2: Write Number in Expanded Form
+ 
+### Class:
+                ExpandedForm
+### Function:    
+                expandedForm(int num) 
+ 
+### Task: 
+ 
+You will be given a number and you will need to return it as a string in Expanded Form.
+ 
+### Examples: 
+ 
+     Kata.expandedForm(12); # Should return "10 + 2"
+     Kata.expandedForm(42); # Should return "40 + 2"
+     Kata.expandedForm(70304); # Should return "70000 + 300 + 4" 
+ 
+ 
+### Favorite solution: 
+ 
+ 
+      public class Kata
+      {
+         public static String expandedForm(int n)
+         {
+            int c = 0; String s = "";
+            while (n>0){ s = n%10==0 ? s : n%10*(int)Math.pow(10,c)+" + "+s; n/=10; c++;}
+            return s.substring(0,s.length()-3);
+         }
+      }
  
