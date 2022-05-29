@@ -29,6 +29,15 @@ public class Main
         System.out.println(ExpandedForm.expandedForm(x));
         System.out.println();
         
+        // Task 3: I love you, a little , a lot, passionately ... not at all
+        
+        System.out.println("Task 3: I love you, a little , a lot, passionately ... not at all");
+        System.out.println("Введите натуральное число n");
+        int nb = sc.nextInt();
+        System.out.println("Как сильно вас любят?:");
+        System.out.println(Sid.howMuchILoveYou(y));
+        System.out.println();
+        
     }
     
     // Task 1: Cat years, Dog years
@@ -115,6 +124,17 @@ public class Main
                 k -= 1;
             }
             return s;
+        }
+    }
+    
+    // Task 3: I love you, a little , a lot, passionately ... not at all
+    
+    public static class Sid 
+    {
+        public static String howMuchILoveYou(int nb_petals) 
+        {
+            String[] answer = new String[] {"I love you", "a little", "a lot", "passionately", "madly", "not at all"};
+            return answer[(nb_petals-1)%6];
         }
     }
     
